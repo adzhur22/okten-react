@@ -1,11 +1,11 @@
 .Rick{
     border: 1px solid black;
-    margin: 20px;
+    margin: 15px;
 
 }
 .simpsons > div{
     border: 1px solid black;
-    margin: 20px;
+    margin: 15px;
     display: flex;
     justify-content: center;
     flex-direction: column;
