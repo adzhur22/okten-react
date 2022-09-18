@@ -1,0 +1,21 @@
+.cardIncrease{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    border: 1px solid black;
+    width: 45vw;
+    margin: 10px;
+
+
+}
+.info{
+    display: flex;
+
+}
+
+.info > h4{
+    margin-right: 40%;
+    font-size: 25px;
+    color: red;
+}
