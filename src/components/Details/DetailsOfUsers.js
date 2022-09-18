@@ -2,7 +2,7 @@ import {useEffect, useState} from "react";
 
 import {getUser} from "../../services/users.api.service";
 
-export default function Details({id}){
+export default function DetailsOfUsers({id}){
 
 
     let [user, setUser] = useState([]);

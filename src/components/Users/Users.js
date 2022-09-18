@@ -2,7 +2,7 @@ import {useEffect, useState} from "react";
 
 import {getUsers} from "../../services/users.api.service";
 import User from "../User/User";
-import Details from "../Details/Details";
+import DetailsOfUsers from "../Details/DetailsOfUsers";
 
 export default function Users(){
 
@@ -24,7 +24,7 @@ export default function Users(){
 
         return(
     <div>
-        {user && <Details id={user}/>}
+        {user && <DetailsOfUsers id={user}/>}
         {users.map((user, index) =>  <User item={user} key={index} lift={lift}/>)}
 
     </div>

@@ -13,6 +13,7 @@
 
 import './App.css';
 import Users from "./components/Users/Users";
+import Flights from "./components/Flights/Flights";
 
 
 
@@ -20,6 +21,10 @@ function App() {
   return (
     <div>
     <Users/>
+      < br/>
+      <hr/>
+    <Flights/>
+
     </div>
   );
 }

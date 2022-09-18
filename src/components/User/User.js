@@ -6,7 +6,7 @@ export default function User(props){
     <div>
         <hr/>
         <h3>{item.name}</h3>
-        <p>Username: <b>{item.username}</b> / Email: <b>{item.email}</b></p>
+        <p>User id: <b>{item.id}</b></p>
         <button onClick={() => lift(item.id)}> details </button>
         <br/>
     </div>
