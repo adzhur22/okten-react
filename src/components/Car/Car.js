@@ -15,7 +15,7 @@ export default function Car({car, setcars, connector}){
     };
 
     function update() {
-        connector(car)
+        connector(car);
 
     }
 

@@ -5,10 +5,10 @@ import {CarForm} from "../CarForm/CarForm";
 
 export default function Cars(){
 
-    const [cars,setcars] = useState([]);
+    const [cars,setCars] = useState([]);
 
     useEffect(() => {
-        carService.getAll().then(({data}) => setcars(data));
+        carService.getAll().then(({data}) => setCars(data));
 
 
 
@@ -27,11 +27,11 @@ function connector ({...data}) {
         return(
     <div>
 
-    <CarForm setCars={setcars} update={update}/>
+    <CarForm setCars={setCars} update={update}/>
 
     <hr/>
 
-        {cars.map(car => <Car key={car.id} car={car} setcars={setcars} connector={connector} />)}
+        {cars.map(car => <Car key={car.id} car={car} setcars={setCars} connector={connector} />)}
 
     </div>
 

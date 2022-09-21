@@ -46,14 +46,15 @@ const CarForm = ({setCars, update}) =>{
         setCars(cars=>[...cars,data])
         reset()
     }
-
+// нажаль не зміг реалізувати оновлення інформації... як не крутив, не получилось(
 
     const updateInfo = async (car) => {
         let {data} = await carService.updateById(update.id, car);
-        setCars(cars=>[...cars,data])
-        console.log(data)
         reset()
+
     }
+
+
 
     return(
 
