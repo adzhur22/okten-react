@@ -10,7 +10,6 @@ export default function Todos(){
 
     let [todos, setTodos]  = useState([]);
 
-
     useEffect(()=>{
         placeholderAxios(urls.todos).then(value => setTodos(value.data));
 

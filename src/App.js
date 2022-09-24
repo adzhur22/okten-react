@@ -35,7 +35,7 @@ function App() {
                 <Route path={'comments'} element={<Comments/>}/>
                 <Route path={'todos'} element={<Todos/>}/>
             </Routes>
-            <hr/>
+
 
         </div>
     );

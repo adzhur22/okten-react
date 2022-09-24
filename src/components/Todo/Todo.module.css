@@ -1,11 +1,20 @@
 .Todo{
     background: white;
-    border: 1px solid black;
-    width: 25%;
+    border: 1px solid #575656;
+    border-right: 3px solid gray;
+    width: 30%;
     margin: 10px;
 
 }
 
-.Head{
+.Head h4 b{
+ color: #00198e;
+}
 
+.CompletedFalse {
+    color: red;
+}
+
+.CompletedTrue{
+    color: green;
 }
