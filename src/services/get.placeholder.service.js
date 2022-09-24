@@ -7,4 +7,4 @@ const getPlaceholder = {
     getAlbums: ()=> placeholderAxios(urls.albums)
 }
 
-export{getPlaceholder}
+export {getPlaceholder};
