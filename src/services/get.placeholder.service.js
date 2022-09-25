@@ -4,7 +4,8 @@ import {urls} from "../urls/urls";
 const getPlaceholder = {
     getTodos: ()=> placeholderAxios(urls.todos),
     getComments: ()=> placeholderAxios(urls.comments),
-    getAlbums: ()=> placeholderAxios(urls.albums)
+    getAlbums: ()=> placeholderAxios(urls.albums),
+    getCommentPosts: (id)=> placeholderAxios(urls.comments + '/' + id + '/posts')
 }
 
 export {getPlaceholder};

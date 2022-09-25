@@ -5,6 +5,7 @@ import HomePage from "./pages/HomePage/HomePage";
 import Albums from "./pages/Albums/Albums";
 import Comments from "./pages/Comments/Comments";
 import Todos from "./pages/Todos/Todos";
+import Posts from "./pages/Posts/Posts";
 
 //реалізувати 3 маршрути
 // todos - при переході на який тягнуться всі todo з https://jsonplaceholder.typicode.com/todos
@@ -33,6 +34,7 @@ function App() {
                 <Route index element={<HomePage/>}/>
                 <Route path={'albums'} element={<Albums/>}/>
                 <Route path={'comments'} element={<Comments/>}/>
+                <Route path={'posts/:id'} element={<Posts/>}/>
                 <Route path={'todos'} element={<Todos/>}/>
             </Routes>
 

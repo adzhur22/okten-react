@@ -5,6 +5,7 @@ export default function Todo({todo}){
     console.log(todo);
     return(
     <div className={css.Todo}>
+
        <div className={css.Head}>
            <h4>User id: <b>{todo.userId}</b>. Id: <b>{todo.id}</b>.</h4>
            <h4>Title: <b>{todo.title}</b></h4>

@@ -17,6 +17,7 @@ export default function Todos(){
 
         return(
     <div className={css.Todos}>
+        <h1>Todo:</h1>
         {todos.map(value => <Todo key={value.id} todo={value}/>)}
 
     </div>

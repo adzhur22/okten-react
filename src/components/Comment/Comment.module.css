@@ -1,24 +1,10 @@
-.Todo{
+.Comment{
     background: white;
     border: 1px solid #575656;
     border-right: 3px solid gray;
-    width: 30%;
+    width: 40%;
     margin: 10px;
     border-top-left-radius: 10px ;
     padding: 10px;
     box-sizing: border-box;
-
-}
-
-
-.Head h4 b{
- color: #00198e;
-}
-
-.CompletedFalse {
-    color: red;
-}
-
-.CompletedTrue{
-    color: green;
 }
