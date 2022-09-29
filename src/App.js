@@ -24,8 +24,14 @@ function App() {
 
           case 'deleteCat':
               let getCat = state.cats;
-              let indexDel = getCat.findIndex(value => value === action.payload);
-              getCat.splice(indexDel,1);
+              let indexDelCat = getCat.findIndex(value => value === action.payload);
+              getCat.splice(indexDelCat,1);
+              return {...state};
+
+          case 'deleteDog':
+              let getDog = state.dogs;
+              let indexDelDog = getDog.findIndex(value => value === action.payload);
+              getDog.splice(indexDelDog,1);
               return {...state};
 
           default: return state;
@@ -49,8 +55,11 @@ function App() {
     }
 
     function del (data){
-         if (data.deleteCat.length > 0){
+         if (data.deleteCat?.length > 0){
              dispatch({type:Object.keys(data)[0], payload:Object.values(data)[0]})
+        }
+        if (data.deleteDog?.length > 0){
+            dispatch({type:Object.keys(data)[0], payload:Object.values(data)[0]})
         }
     }
 
@@ -67,7 +76,7 @@ function App() {
         <hr/>
 
         {state.cats.map((value, index) => <Cat key={index} cat={value} del={del} />)}
-        {state.dogs.map((value, index) => <Dog key={index} dog={value} />)}
+        {state.dogs.map((value, index) => <Dog key={index} dog={value} del={del} />)}
 
 
     </div>

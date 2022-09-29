@@ -1,11 +1,12 @@
-export default function Dog({dog}){
-        return(
+export default function Dog({dog,del}){
 
 
-    <div>
-  <div>{dog}</div>
+    return(
 
-    </div>
+        <div>
+            <div>dog: {dog}</div>
+            <button onClick={()=> del({deleteDog: dog})}>delete</button>
+        </div>
 
-        );
+    );
 }
