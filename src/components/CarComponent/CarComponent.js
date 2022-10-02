@@ -1,6 +1,18 @@
 import {carService} from "../../services";
 
+
 export function CarComponent({car, setCars}){
+
+    const deleteCar = async () =>{
+        await carService.deleteCarById(car.id)
+        setCars(carOfSet => {
+           let findIdCar = carOfSet.findIndex(value => value.id === car.id);
+           console.log(findIdCar)
+            carOfSet.splice(findIdCar,1)
+            return [...carOfSet]
+        })
+
+   };
 
       const  sendPhoto = async (e) =>{
         const formData = new FormData();
@@ -25,6 +37,7 @@ export function CarComponent({car, setCars}){
                     :
                 <input type="file" onChange={sendPhoto}/>
             }
+            <button onClick={deleteCar}>delete</button>
         </div>
         <hr/>
 
