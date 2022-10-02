@@ -7,7 +7,7 @@ const _refreshTokenKey = 'refresh';
 const authService = {
     register: (user) => axiosCars.post(urls.users, user),
     login: (user) => axiosCars.post(urls.auth.login, user),
-    token: (token) => axiosCars.post(urls.auth.refresh, {token}),
+    token: (token) => axiosCars.post(urls.auth.refresh, {refresh: token}),
 
     localStorage:{
         setTokens:({access,refresh})=>{

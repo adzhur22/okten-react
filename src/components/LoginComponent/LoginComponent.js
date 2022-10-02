@@ -1,6 +1,6 @@
 import {useForm} from "react-hook-form";
 import {useState} from "react";
-import {useNavigate} from "react-router-dom";
+import {useNavigate, useSearchParams} from "react-router-dom";
 
 import {authService} from "../../services";
 
@@ -12,6 +12,9 @@ export function LoginComponent(){
     let [error, setError] = useState();
 
     let navigate = useNavigate();
+
+    let [quety,] = useSearchParams();
+
 
 
     async function submit(user) {
@@ -31,6 +34,9 @@ export function LoginComponent(){
     <div>
         LoginComponent
 
+        <div>
+            {quety.has('expSession')&&<h3>Sesion end</h3>}
+        </div>
         {error && <h3>{error}</h3>}
 
         <form onSubmit={handleSubmit(submit)}>
