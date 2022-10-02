@@ -1,0 +1,19 @@
+.buttonDiv{
+    display: flex;
+    justify-content: right;
+    align-items: center;
+
+}
+.buttonDiv button{
+    margin-right: 10px;
+    margin-top: 20px;
+    background: #f3f3f3;
+    border: 1px solid #5f5f5f;
+}
+
+.buttonDiv button:hover{
+    background: #ecffc5;
+    border: 1px solid #5f5f5f;
+
+}
+

@@ -1,17 +1,25 @@
 import {useForm} from "react-hook-form";
-import {authService} from "../../services";
 import {useState} from "react";
+import {useNavigate} from "react-router-dom";
+
+import {authService} from "../../services";
+
 
 export function LoginComponent(){
+
     let {register,handleSubmit} = useForm();
 
     let [error, setError] = useState();
+
+    let navigate = useNavigate();
 
 
     async function submit(user) {
         try {
             let {data} = await authService.login(user);
-            console.log(data);
+            authService.localStorage.setTokens(data);
+            navigate('/cars')
+
         }catch (e){
             setError(e.response.data?.detail);
         }

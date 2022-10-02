@@ -1,12 +1,17 @@
-import {Header} from "../../components";
+import {HeaderComponent} from "../../components";
 import {Outlet} from "react-router-dom";
+
+import css from './MainLayout.module.css';
 
 export  function MainLayout(){
         return(
     <div>
-        <Header/>
-        <hr/>
+        <div className={css.Header}>
+            <HeaderComponent/>
+        </div>
+
         <Outlet/>
+
     </div>
 
         );

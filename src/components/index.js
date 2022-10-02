@@ -1,3 +1,5 @@
-export * from './Header/Header'
+export * from './HeaderComponent/HeaderComponent'
 export * from './RegisterComponent/RegisterComponent'
 export * from './LoginComponent/LoginComponent'
+export * from './CarsComponent/CarsComponent'
+export * from './CarComponent/CarComponent'
