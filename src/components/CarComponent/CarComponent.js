@@ -7,7 +7,6 @@ export function CarComponent({car, setCars}){
         await carService.deleteCarById(car.id)
         setCars(carOfSet => {
            let findIdCar = carOfSet.findIndex(value => value.id === car.id);
-           console.log(findIdCar)
             carOfSet.splice(findIdCar,1)
             return [...carOfSet]
         })
