@@ -1,0 +1,21 @@
+.body{
+
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+
+
+.users{
+    width: 30%;
+    padding-top: 10px;
+    box-sizing: border-box;
+
+}
+.posts{
+    width: 70%;
+    border-left: 1px solid black;
+    padding-top: 10px;
+    box-sizing: border-box;
+}

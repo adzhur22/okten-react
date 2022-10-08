@@ -1,5 +1,7 @@
 import {useDispatch} from "react-redux";
-import {userActions} from "../../redux/slices/user.slice";
+
+import {userActions} from "../../redux/slices";
+
 
 export function User({user}){
 
@@ -7,9 +9,12 @@ export function User({user}){
 
         return(
     <div>
-        {user.name}/{user.id}
-        <button onClick={()=> dispatch(userActions.currentUser(user))}>currentUser</button>
+        <h3>user name: {user.name} / user id:{user.id}</h3>
+
+        <button onClick={()=> dispatch(userActions.getUser(user))}>currentUser</button>
         <button onClick={()=> dispatch(userActions.deleteUser(user.id))}>delete user</button>
+        <hr/>
+
     </div>
 
         );

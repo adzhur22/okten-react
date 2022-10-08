@@ -1,3 +1,4 @@
+export * from './Body/Body'
 export * from './Header/Header'
 export * from './Post/Post'
 export * from './Posts/Posts'
