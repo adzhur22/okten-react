@@ -1,5 +1,7 @@
 import {createAsyncThunk, createSlice} from "@reduxjs/toolkit";
+
 import {carService} from "../../services";
+
 
 const initialState = {
     cars:[],
@@ -15,7 +17,7 @@ const getAllCars = createAsyncThunk(
             const {data} = await carService.getAll()
              return data
          }catch (e){
-            rejectWithValue(e.response.data)
+            return rejectWithValue(e.response.statusText)
          }
     }
 );
@@ -45,6 +47,19 @@ const deleteCar = createAsyncThunk(
     }
 )
 
+const updateCarByIndex = createAsyncThunk(
+    'carSlice/updateCarByIndex',
+    async (car,{rejectWithValue,dispatch})=>{
+        try{
+            const {data} = await carService.updateByID(car.updateCar.id, car.car);
+
+            return data
+        }catch (e){
+
+        }
+    }
+)
+
 
 const carSlice = createSlice({
     name:'carSlice',
@@ -61,9 +76,20 @@ const carSlice = createSlice({
     extraReducers:builder => builder
         .addCase(getAllCars.fulfilled,(state, action) => {
             state.cars = action.payload;
+            state.loading = false;
+        }).addCase(getAllCars.pending,(state, action) => {
+            state.loading = true;
+        }).addCase(getAllCars.rejected,(state, action) => {
+            state.errors = action.payload;
+            state.loading = false;
         })
         .addCase(createCar.fulfilled,(state, action) => {
             state.cars.push(action.payload);
+        })
+        .addCase(updateCarByIndex.fulfilled,(state, action) => {
+            const index = state.cars.findIndex(value => value.id === action.payload.id);
+            state.cars.splice(index,1,action.payload);
+            state.updateCar = null;
         })
 })
 
@@ -73,7 +99,8 @@ const carActions = {
     getAllCars,
     createCar,
     deleteCar,
-    updateCar
+    updateCar,
+    updateCarByIndex
 }
 
 export {carActions, carReducer, deleteCar}

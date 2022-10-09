@@ -1,10 +1,11 @@
 import {useForm} from "react-hook-form";
 import {joiResolver} from "@hookform/resolvers/joi";
+import {useEffect} from "react";
 
 import {carValidator} from "../../validators";
 import {useDispatch, useSelector} from "react-redux";
 import {carActions} from "../../redux/car.slicer";
-import {useEffect} from "react";
+
 
 export function CarFrom(){
 
@@ -28,10 +29,12 @@ export function CarFrom(){
     const submit = (car) =>{
         if(!updateCar){
             dispatch(carActions.createCar(car));
+            reset();
         }else {
-            // dispatchUpdate
-        }
+            dispatch(carActions.updateCarByIndex({car, updateCar}));
+            reset();
 
+        }
     }
 
         return(

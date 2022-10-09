@@ -1,5 +1,6 @@
 import {useDispatch, useSelector} from "react-redux";
 import {useEffect} from "react";
+
 import {carActions} from "../../redux/car.slicer";
 import {Car} from "../car/Car";
 import {CarFrom} from "../carForm/CarFrom";
@@ -8,7 +9,8 @@ export function Cars(){
 
     const dispatch = useDispatch();
 
-    const {cars} = useSelector(store => store.carReducer);
+    const {cars, loading, errors} = useSelector(store => store.carReducer);
+
 
     useEffect(()=>{
         dispatch(carActions.getAllCars())
@@ -18,7 +20,9 @@ export function Cars(){
     <div>
         <CarFrom/>
         <hr/>
-        {cars.map(value => <Car key={value.id} car={value}/>)}
+        {loading && <img src={'https://acegif.com/wp-content/uploads/loading-25.gif'} alt={'loading'}/>}
+        {cars && cars.map(value => <Car key={value.id} car={value}/>)}
+        {errors && <h1>{errors}</h1>}
     </div>
 
         );
